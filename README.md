@@ -6,6 +6,6 @@
 + 数字以外の文字が書き込まれた場合は2回点滅させ、警告する。
 + 警告したのち、デバイスファイルにエラー文を出力する。
 
-## 実装した動画
+## DEMO動画
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/JHrsDwuTSwI/0.jpg)](http://www.youtube.com/watch?v=JHrsDwuTSwI)  
 https://www.youtube.com/watch?v=JHrsDwuTSwI
