@@ -26,11 +26,22 @@ static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_
   if(copy_from_user(&c,buf,sizeof(char)))
   return -EFAULT;
   if(c && c != '\n'){
-    for(i=0; i<((int) c - (int) '0'); i++){ 
+    if( 0 <= (int) c -(int) '0' && (int) c - (int) '0' <= 9){
+        for(i=0; i<((int) c - (int) '0'); i++){ 
+        gpio_base[7] = 1 << 25;
+        msleep(500);
+        gpio_base[10] = 1 << 25;
+        msleep(500);
+        }
+    }
+    else{ 
+      printk(KERN_INFO "no number!!!!\n");
+      for(i=0; i<2; i++){ 
       gpio_base[7] = 1 << 25;
-      msleep(500);
+      msleep(100);
       gpio_base[10] = 1 << 25;
-      msleep(500);
+      msleep(100);
+      }
     }
   }
 
